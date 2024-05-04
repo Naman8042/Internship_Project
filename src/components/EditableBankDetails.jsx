@@ -4,7 +4,7 @@ const EditableBankDetails = ({ details, handleChange, onSave }) => {
   
 
     return (
-        <div className="w-full md:w-full mx-auto p-[3%]  pt-[1%] border-l-2">
+        <div className="w-full md:w-full mx-auto p-[3%]  pt-[1%] md:border-l-2">
           <h1 className="text-3xl font-bold my-[1%] text-start w-full mt-[3%] px-[1%]">Update Bank Details</h1>
           <p className='text-start w-[90%] px-[1%] my-[3%] md:my-[1%]'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus tenetur laudantium sed non? Sint ea, molestiae blanditiis quasi, quas ut nisi voluptates accusantium, ad quo cumque maxime. Aliquid, officiis quod.</p>
 
@@ -115,7 +115,9 @@ const EditableBankDetails = ({ details, handleChange, onSave }) => {
             
             
           </div>
+          <div className='flex sm:justify-center w-screen'>
           <p className='w-[90%] text-center border-b-2 pb-[2%] my-[5%] md:my:[0.25%] md:text-xl'>The ABOVE DETAILS ARE FINAL AND WILL BE USED FOR PAYMENT IF ANY OF THESE DETAILS ARE WRONG PLEASE CONTACT YOUR MANAGER IMMEDIATELY! ALSO EMAIL THE SAME TO ACCOUNT @EXAMBAZAAR.COM</p>
+          </div>
           </div>
     )
 }
