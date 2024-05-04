@@ -5,10 +5,13 @@ import EditableBankDetails from '../components/EditableBankDetails';
 import ViewBankDetails from '../components/ViewBankDetails';
 
 const App = () => {
-    
+  const[load,setLoad] = useState(true)
+  function Load(){
+    setLoad(!load)
+  }
   return(
     <>
-    <Navbar/>
+    <Navbar Load={Load} load={load}/>
     <div className='flex w-screen'>
         <Sidebar/>
         <BankDetails />
@@ -21,6 +24,7 @@ const App = () => {
 
 function BankDetails({ onSave }) {
     const [isEditMode, setIsEditMode] = useState(true); 
+    const d = new Date()
     const [details, setDetails] = useState({
       accountHolderName: '',
       accountNumber: '',
@@ -29,6 +33,9 @@ function BankDetails({ onSave }) {
       ifscCode: '',
       bankCity:'',
       relation:'',
+      date:'',
+      month:'',
+      year:''
     });
   
     const handleChange = (name,value) => {
@@ -41,11 +48,14 @@ function BankDetails({ onSave }) {
   
     const handleSave = () => {
       setIsEditMode(false);
+      details.date = d.getDate() 
+      details.month = d.getMonth()
+      details.year = d.getFullYear()
       onSave(details);
     };
   
     return (
-      <div className='w-full md:w-[80%] mx-auto'>
+      <div className='w-full md:w-[80%] mx-auto '>
         {isEditMode ? (
           <EditableBankDetails details={details} handleChange={handleChange} onSave={handleSave} />
         ) : (

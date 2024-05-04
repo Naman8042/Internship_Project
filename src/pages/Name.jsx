@@ -13,7 +13,7 @@ const App = () => {
     validateName(inputName);
   };
 
-  // Function to validate the name
+ 
   const validateName = (inputName) => {
     if (!inputName.trim()) {
       setNameError('Name is required');
@@ -23,14 +23,14 @@ const App = () => {
     checkFormCompletion(inputName, email);
   };
 
-  // Function to handle changes in the email input field
+  
   const handleEmailChange = (event) => {
     const inputEmail = event.target.value;
     setEmail(inputEmail);
     validateEmail(inputEmail);
   };
 
-  // Function to validate the email
+
   const validateEmail = (inputEmail) => {
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!inputEmail.trim()) {
